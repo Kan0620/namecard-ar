@@ -1,57 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script>
-    window.onload = function () {
-      document
-        .querySelector(".say-hi-button")
-        .addEventListener("click", function () {
-          // here you can change also a-scene or a-entity properties, like
-          // changing your 3D model source, size, position and so on
-          // or you can just open links, trigger actions...
-          alert("Hi there!");
-        });
-    };
-  </script>
-  <style>
-    .buttons {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- A-Frame を読み込む -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- AR.js を読み込む -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <title>test page</title>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <a-scene embedded arjs vr-mode-ui="enabled: false;">
+	    
+      <!-- 3DCGモデルを読み込む -->
+      <a-assets>
+        <a-asset-item id="my_object" src="data/first_test.glb"></a-asset-item>
+      </a-assets>
 
-    .say-hi-button {
-      padding: 0.25em;
-      border-radius: 4px;
-      border: none;
-      background: white;
-      color: black;
-      width: 4em;
-      height: 2em;
-    }
-  </style>
-  <body style="margin : 0px; overflow: hidden;">
-    <div class="buttons">
-      <button class="say-hi-button">SAY HI!</button>
-    </div>
-    <a-scene embedded arjs>
-      <div class="buttons">
-        <button class="say-hi-button">SAY HI!</button>
-      </div>
+      <!-- マーカーの.pattファイルを読み込む -->
       <a-marker type="pattern" url="data/pattern-marker.patt">
-        <a-entity
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></a-entity>
+        <!-- 3Dモデルを呼び出す -->
+        <a-entity gltf-model="#my_object"></a-entity>
       </a-marker>
+
+      <!-- カメラを追加 -->
       <a-entity camera></a-entity>
     </a-scene>
   </body>
