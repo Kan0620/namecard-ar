@@ -15,11 +15,11 @@
 	    
       <!-- 3DCGモデルを読み込む -->
       <a-assets>
-        <a-asset-item id="my_object" src="{{ obj_file_path }}"></a-asset-item>
+        <a-asset-item id="my_object" src="{{ url_for('static', path=obj_file_path) }}"></a-asset-item>
       </a-assets>
 
       <!-- マーカーの.pattファイルを読み込む -->
-      <a-marker type="pattern" url="{{ marker_img_path }}">
+      <a-marker type="pattern" url="{{ url_for('static', path=marker_img_path) }}">
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#my_object"></a-entity>
       </a-marker>
