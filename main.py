@@ -22,6 +22,7 @@ templates = Jinja2Templates(directory='pages')
 def get_product(request: Request):
     return templates.TemplateResponse(
         "index.html",
+        {"request": request}
     )
 
 # if __name__ == '__main__':
