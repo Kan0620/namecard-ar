@@ -15,8 +15,8 @@ async def test(request: Request):
         "template_ar.html",
         {
             "request": request,
-            "obj_file_path": "/ar_data/test/first_test.glb",
-            "marker_img_path": "/ar_data/test/pattern-marker.patt"
+            "obj_file_path": "/ar_data/test/test.glb",
+            "marker_img_path": "/ar_data/test/test.patt"
             }
     )
 
