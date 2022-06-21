@@ -12,7 +12,7 @@ templates = Jinja2Templates(directory="static")
 @router.get("/test", response_class=HTMLResponse)
 async def test(request: Request):
     return templates.TemplateResponse(
-        "html/template_ar.html",
+        "template_ar.html",
         {
             "request": request,
             "obj_file_path": "/ar_data/test/first_test.glb",
