@@ -18,7 +18,7 @@ templates = Jinja2Templates(directory='pages')
 
 
 @app.get("/", response_class=HTMLResponse)
-#@router.get("/", response_class=HTMLResponse)
+
 def get_product(request: Request):
     return templates.TemplateResponse(
         "index.html",

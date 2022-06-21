@@ -15,11 +15,11 @@
 	    
       <!-- 3DCGモデルを読み込む -->
       <a-assets>
-        <a-asset-item id="my_object" src="./pages/data/first_test.glb"></a-asset-item>
+        <a-asset-item id="my_object" src="/pages/data/first_test.glb"></a-asset-item>
       </a-assets>
 
       <!-- マーカーの.pattファイルを読み込む -->
-      <a-marker type="pattern" url="./pages/data/pattern-marker.patt">
+      <a-marker type="pattern" url="/pages/data/pattern-marker.patt">
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#my_object"></a-entity>
       </a-marker>
