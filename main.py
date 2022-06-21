@@ -25,12 +25,12 @@ templates = Jinja2Templates(directory='static')
 
 def get_product(request: Request):
     return templates.TemplateResponse(
-        "index.html",
+        "embed_index.html",
         {
             "request": request,
             "obj_file_path": "data/first_test.glb",
             "marker_img_path": "data/pattern-marker.patt"
-         }
+            }
     )
 
 app.include_router(index.router)
