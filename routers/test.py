@@ -7,12 +7,12 @@ from fastapi.templating import Jinja2Templates
 router = APIRouter()
 
 router.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="static/html")
+templates = Jinja2Templates(directory="static")
 
 @router.get("/test", response_class=HTMLResponse)
 async def test(request: Request):
     return templates.TemplateResponse(
-        "template_ar.html",
+        "html/template_ar.html",
         {
             "request": request,
             "obj_file_path": "ar_data/test/first_test.glb",
