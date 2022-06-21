@@ -23,7 +23,7 @@ def get_product(request: Request):
     return templates.TemplateResponse(
         "index.html",
     )
-    
-if __name__ == '__main__':
-    # コンソールで [$ uvicorn run:app --reload]でも可
-    uvicorn.run(app=app)
+
+# if __name__ == '__main__':
+#     # コンソールで [$ uvicorn run:app --reload]でも可
+#     uvicorn.run(app=app)

@@ -1,3 +1,3 @@
-.PHONY: venv
-venv:
-		. .venv/bin/activate
+.PHONY: deploy
+deploy:
+		git push heroku main
