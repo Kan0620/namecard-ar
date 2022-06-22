@@ -1,6 +1,6 @@
 api_description = \
 """
-### ARを表示するHTMLを返すAPI テスト開発用
+### ARを表示するHTMLを返すAPI
 """
 
 api_info = {
