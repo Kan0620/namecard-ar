@@ -15,9 +15,10 @@ app = FastAPI(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(index.router, tags=["index"])
+
 app.include_router(test.router, tags=["marker-AR"])
 app.include_router(test_qr.router, tags=["marker-AR"])
-app.include_router(shodai.router, tags=["marker-AR"])
+
 
 # if __name__ == '__main__':
 #     # コンソールで [$ uvicorn run:app --reload]でも可
